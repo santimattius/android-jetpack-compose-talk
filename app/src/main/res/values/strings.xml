@@ -3,4 +3,5 @@
     <string name="title_activity_declarative">DeclarativeActivity</string>
     <string name="text_button">Increment</string>
     <string name="title_activity_state">StateActivity</string>
+    <string name="title_activity_animations">Animations</string>
 </resources>

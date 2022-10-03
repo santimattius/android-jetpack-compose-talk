@@ -46,6 +46,11 @@ private fun ComponentWithoutState() {
 private fun ComponentWithState() {
     Column(modifier = Modifier.padding(16.dp)) {
         var name by remember { mutableStateOf("") }
+        OutlinedTextField(
+            value = name,
+            onValueChange = { name = it },
+            label = { Text("Name") }
+        )
         if (name.isNotBlank()) {
             Text(
                 text = "Hello, $name!",
@@ -53,11 +58,6 @@ private fun ComponentWithState() {
                 style = MaterialTheme.typography.h5
             )
         }
-        OutlinedTextField(
-            value = name,
-            onValueChange = { name = it },
-            label = { Text("Name") }
-        )
     }
 }
 

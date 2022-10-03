@@ -13,6 +13,7 @@ import com.santimattius.android.compose.talk.migration.placeholder.PlaceholderCo
  */
 class ItemRecyclerViewAdapter(
     private val values: List<PlaceholderItem>,
+    private val onClick: (PlaceholderItem) -> Unit,
 ) : RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,18 +23,22 @@ class ItemRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.bind(item, onClick)
+
     }
 
     override fun getItemCount(): Int = values.size
 
     class ViewHolder(binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
+        private val contentView: TextView = binding.content
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
+
+        fun bind(item: PlaceholderItem, onClick: (PlaceholderItem) -> Unit) {
+            contentView.text = item.content
+            itemView.setOnClickListener {
+                onClick(item)
+            }
+
         }
 
         companion object {
