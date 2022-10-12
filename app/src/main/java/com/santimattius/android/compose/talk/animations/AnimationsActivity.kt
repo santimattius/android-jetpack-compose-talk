@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.airbnb.lottie.compose.*
 import com.santimattius.android.compose.talk.R
 import com.santimattius.android.compose.talk.shared.ComposeTalkContainer
+import com.santimattius.android.compose.talk.shared.deeplink.InternalDeepLink
 
 @JvmInline
 value class LottieAnimationIterations(val iterations: Int)
@@ -26,6 +27,7 @@ value class LottieAnimationIterations(val iterations: Int)
 val LocalLottieAnimationIterations =
     compositionLocalOf { LottieAnimationIterations(LottieConstants.IterateForever) }
 
+@InternalDeepLink("/animations")
 class AnimationsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

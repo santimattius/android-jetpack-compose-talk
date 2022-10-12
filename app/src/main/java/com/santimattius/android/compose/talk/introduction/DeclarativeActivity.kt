@@ -17,7 +17,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.santimattius.android.compose.talk.R
 import com.santimattius.android.compose.talk.shared.ComposeTalkContainer
+import com.santimattius.android.compose.talk.shared.deeplink.InternalDeepLink
 
+@InternalDeepLink("/declarative")
 class DeclarativeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,10 @@ private fun DeclarativeContent() {
 
     Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)) {
+        verticalArrangement = Arrangement.spacedBy(
+            space = 16.dp,
+            alignment = Alignment.CenterVertically,
+        )) {
 
         Text(
             text = "$counter",

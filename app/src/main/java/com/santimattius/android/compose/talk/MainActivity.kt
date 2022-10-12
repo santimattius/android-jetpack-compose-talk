@@ -40,26 +40,18 @@ class MainActivity : ComponentActivity() {
 @ExperimentalMaterialApi
 @Composable
 fun MainScreen(features: List<Feature>) {
-    Scaffold(
-        topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }
-    ) { padding ->
+    Scaffold(topBar = { TopAppBar(title = { Text(text = stringResource(id = R.string.app_name)) }) }) { padding ->
         Box(modifier = Modifier
             .fillMaxSize()
-            .padding(padding)
-        ) {
+            .padding(padding)) {
 
             val handler = LocalUriHandler.current
 
             LazyColumn {
                 items(features, key = { it.id }) { item ->
-                    ListItem(
-                        icon = {
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_avo),
-                                contentDescription = item.title,
-                                modifier = Modifier.size(32.dp)
-                            )
-                        },
+                    ListItem(icon = {
+                        BaltaIcon(contentDescription = item.title)
+                    },
                         text = { Text(text = item.title) },
                         secondaryText = { Text(text = item.description) },
                         modifier = Modifier.clickable {
@@ -69,6 +61,18 @@ fun MainScreen(features: List<Feature>) {
             }
         }
     }
+}
+
+@Composable
+fun BaltaIcon(
+    contentDescription: String,
+    modifier: Modifier = Modifier.size(32.dp),
+) {
+    Image(
+        painter = painterResource(id = R.drawable.ic_avo),
+        contentDescription = contentDescription,
+        modifier = modifier,
+    )
 }
 
 @ExperimentalMaterialApi

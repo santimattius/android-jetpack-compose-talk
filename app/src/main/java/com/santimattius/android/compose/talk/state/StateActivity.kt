@@ -13,7 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.santimattius.android.compose.talk.shared.ComposeTalkContainer
+import com.santimattius.android.compose.talk.shared.deeplink.InternalDeepLink
 
+@InternalDeepLink("/state")
 class StateActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,5 +1,6 @@
 package com.santimattius.android.compose.talk
 
+import com.santimattius.android.compose.talk.shared.deeplink.BASE_DEEP_LINK
 import java.util.*
 
 object FeaturesRepository {
@@ -8,27 +9,37 @@ object FeaturesRepository {
         Feature(
             title = "Imperative UI",
             description = "using imperative programming",
-            deepLink = "talk://imperative",
+            tag = "imperative",
         ),
         Feature(
             title = "Declarative UI",
             description = "using declarative programming",
-            deepLink = "talk://declarative",
+            tag = "declarative",
         ),
         Feature(
             title = "Compose State Management",
             description = "using state in compose",
-            deepLink = "talk://state",
+            tag = "state",
         ),
         Feature(
             title = "Migration to Compose",
             description = "migrate from AndroidView to JetpackCompose",
-            deepLink = "talk://migration",
+            tag = "migration",
         ),
         Feature(
             title = "Animations",
             description = "using animations in compose",
-            deepLink = "talk://animations",
+            tag = "animations",
+        ),
+        Feature(
+            title = "Previews",
+            description = "using compose preview tool",
+            tag = "preview",
+        ),
+        Feature(
+            title = "Layouts",
+            description = "using layouts in compose",
+            tag = "layouts",
         ),
     )
 
@@ -36,8 +47,12 @@ object FeaturesRepository {
 
 
 data class Feature(
-    val id: String = UUID.randomUUID().toString(),
     val title: String,
     val description: String,
-    val deepLink: String,
-)
+    val tag: String,
+) {
+    val id: String = UUID.randomUUID().toString()
+
+    val deepLink: String
+        get() = "$BASE_DEEP_LINK/$tag"
+}
