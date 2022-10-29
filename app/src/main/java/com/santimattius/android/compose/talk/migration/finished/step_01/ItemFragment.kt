@@ -1,4 +1,4 @@
-package com.santimattius.android.compose.talk.migration
+package com.santimattius.android.compose.talk.migration.finished.step_01
 
 import android.os.Bundle
 import android.view.LayoutInflater

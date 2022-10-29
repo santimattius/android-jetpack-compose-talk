@@ -1,19 +1,20 @@
-package com.santimattius.android.compose.talk.migration
+package com.santimattius.android.compose.talk.migration.started
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.santimattius.android.compose.talk.databinding.FragmentItemBinding
-import com.santimattius.android.compose.talk.migration.placeholder.PlaceholderContent.PlaceholderItem
+import com.santimattius.android.compose.talk.migration.placeholder.PlaceholderContent
+
 
 /**
  * [RecyclerView.Adapter] that can display a [PlaceholderItem].
  *
  */
 class ItemRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>,
-    private val onClick: (PlaceholderItem) -> Unit,
+    private val values: List<PlaceholderContent.PlaceholderItem>,
+    private val onClick: (PlaceholderContent.PlaceholderItem) -> Unit,
 ) : RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,7 +34,10 @@ class ItemRecyclerViewAdapter(
         private val contentView: TextView = binding.content
 
 
-        fun bind(item: PlaceholderItem, onClick: (PlaceholderItem) -> Unit) {
+        fun bind(
+            item: PlaceholderContent.PlaceholderItem,
+            onClick: (PlaceholderContent.PlaceholderItem) -> Unit,
+        ) {
             contentView.text = item.content
             itemView.setOnClickListener {
                 onClick(item)

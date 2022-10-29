@@ -38,12 +38,38 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".migration.MigrationActivity"
+            android:name=".migration.started.MigrationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".migration.finished.step_01.MigrationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".migration.finished.step_02.MigrationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".migration.finished.step_03.MigrationActivity"
+            android:theme="@style/Theme.ComposeTalk"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <activity
             android:name=".state.StateActivity"
             android:exported="false"

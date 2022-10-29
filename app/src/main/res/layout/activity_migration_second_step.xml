@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".migration.MigrationActivity">
+    tools:context=".migration.finished.step_03.MigrationActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
-        android:name="com.santimattius.android.compose.talk.migration.ItemFragment"
+        android:name="com.santimattius.android.compose.talk.migration.finished.step_02.ItemFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="items_fragment"

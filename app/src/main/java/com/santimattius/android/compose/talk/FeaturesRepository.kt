@@ -24,7 +24,22 @@ object FeaturesRepository {
         Feature(
             title = "Migration to Compose",
             description = "migrate from AndroidView to JetpackCompose",
-            tag = "migration",
+            tag = "migration_started",
+        ),
+        Feature(
+            title = "Step 01 - Migration to Compose",
+            description = "Migrate recyclerview items",
+            tag = "migration_first_step",
+        ),
+        Feature(
+            title = "Step 02 - Migration to Compose",
+            description = "Migrate fragment",
+            tag = "migration_second_step",
+        ),
+        Feature(
+            title = "Step 03 - Migration to Compose",
+            description = "Migrate all activity components",
+            tag = "migration_final_step",
         ),
         Feature(
             title = "Animations",
